@@ -41,6 +41,7 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteHolder> {
 
         holder.title.setText(notes.get(position).getTitle());
         holder.description.setText(notes.get(position).getDescription());
+        holder.date.setText(notes.get(position).getDate());
     }
 
     @Override
@@ -54,12 +55,15 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteHolder> {
         TextView description;
         ImageView imgEdit;
 
+        TextView date;
+
         public NoteHolder(@NonNull View itemView) {
             super(itemView);
 
             title = itemView.findViewById(R.id.note_title);
             description = itemView.findViewById(R.id.note_description);
             imgEdit = itemView.findViewById(R.id.img_edit);
+            date = itemView.findViewById(R.id.note_date);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

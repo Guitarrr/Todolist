@@ -1,9 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<shape xmlns:android="http://schemas.android.com/apk/res/android">
-    <solid android:color="@color/color_primary" />
-    <corners
-        android:bottomLeftRadius="90dp"
-        android:topLeftRadius="90dp"
-        android:topRightRadius="90dp"
-        />
-</shape>
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="?attr/colorControlHighlight"> <!-- ripple color -->
+
+    <!-- Mask for ripple to match shape -->
+    <item android:id="@android:id/mask">
+        <shape>
+            <corners
+                android:topLeftRadius="90dp"
+                android:topRightRadius="90dp"
+                android:bottomLeftRadius="90dp"/>
+            <solid android:color="@android:color/white"/>
+        </shape>
+    </item>
+
+    <!-- Layered background (border + inner fill) -->
+    <item>
+        <layer-list>
+            <!-- Border -->
+            <item>
+                <shape>
+                    <solid android:color="@color/black"/> <!-- border color -->
+                    <corners
+                        android:topLeftRadius="90dp"
+                        android:topRightRadius="90dp"
+                        android:bottomLeftRadius="90dp"/>
+                </shape>
+            </item>
+
+            <!-- Inner background -->
+            <item android:left="3dp" android:top="3dp" android:right="3dp" android:bottom="3dp">
+                <shape>
+                    <solid android:color="@color/color_primary_dark"/> <!-- fill color -->
+                    <corners
+                        android:topLeftRadius="87dp"
+                        android:topRightRadius="87dp"
+                        android:bottomLeftRadius="87dp"/>
+                </shape>
+            </item>
+        </layer-list>
+    </item>
+
+</ripple>

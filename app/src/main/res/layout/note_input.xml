@@ -3,11 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="16dp"
-    android:padding="16dp"
-    app:cardBackgroundColor="@color/color_primary"
-    app:cardCornerRadius="12dp"
-    app:cardElevation="6dp">
+    app:cardCornerRadius="8dp"
+    app:cardElevation="6dp"
+    app:contentPadding="4dp"
+    app:cardBackgroundColor="@color/color_primary" >
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -32,7 +31,6 @@
             android:hint="Enter note title"
             android:textSize="18sp"
             android:padding="8dp"/>
-
         <!-- Note Description input -->
         <EditText
             android:id="@+id/edit_description"
@@ -44,21 +42,38 @@
             android:padding="8dp"
             android:layout_marginTop="10dp"/>
 
+        <Button
+            android:id="@+id/btn_today"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/color_primary_dark"
+            android:text="Today" />
         <!-- Buttons Row -->
+        <Button
+            android:id="@+id/btn_tomorrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/color_primary_dark"
+            android:text="Tomorrow" />
+
+        <Button
+            android:id="@+id/btn_pick_date"
+            android:layout_width="127dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/color_primary_dark"
+            android:text="Pick Date" />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="end"
             android:layout_marginTop="16dp"
             android:orientation="horizontal">
-
             <Button
                 android:id="@+id/btn_cancel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/color_primary_dark"
                 android:text="Cancel" />
-
             <Space
                 android:layout_width="16dp"
                 android:layout_height="wrap_content"/>
